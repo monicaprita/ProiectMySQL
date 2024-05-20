@@ -153,59 +153,57 @@ values
            select * from carti inner join edituri on carti.ID_editura = edituri.ID_editura;
            ```
          * Return all data from the Carti table and Edituri table, ordered by ID_carte:
-            ```sql
-          select * from carti left join edituri on carti.ID_editura = edituri.ID_editura;
-            ```
+           ```sql
+           select * from carti left join edituri on carti.ID_editura = edituri.ID_editura;
+           ```
          * Return data from the carti table and edituri table and the ID_editura is null:
            ```sql
-          select * from carti left join edituri on carti.ID_editura = edituri.ID_editura where edituri.ID_editura is null;
+           select * from carti left join edituri on carti.ID_editura = edituri.ID_editura where edituri.ID_editura is null;
            ```
          * Return data from the carti table and edituri table and the ID_editura is not null:
            ```sql
-          select * from carti left join edituri on carti.ID_editura = edituri.ID_editura where edituri.ID_editura is not null;
+           select * from carti left join edituri on carti.ID_editura = edituri.ID_editura where edituri.ID_editura is not null;
            ```
          * Return all data from edituri table with the name 'Iamgo Dei':
            ```sql
-          select * from edituri where Nume_editura = 'Imago Dei';
+           select * from edituri where Nume_editura = 'Imago Dei';
            ```
          * Return all data from the Carti table and Edituri table that have Nume_editura = 'Imago Dei':
            ```sql
-          select * from carti left join edituri on carti.ID_editura = edituri.ID_editura where Nume_editura = 'Imago Dei';
+           select * from carti left join edituri on carti.ID_editura = edituri.ID_editura where Nume_editura = 'Imago Dei';
            ```
          * Return all names from Autori table who contains letter 'r':
            ```sql
-          select * from Autori where Nume_autor like "%r%";
-          ```
-         * Returns all data from Carti table where An_publicare starts with 2 and the title of the book contains letter 'e':  
-          ```sql
-          select * from carti where An_publicare like '2%' and Titlu like '%e%';
-          ```
+           select * from Autori where Nume_autor like "%r%";
+           ```
+         * Returns all data from Carti table where An_publicare starts with 2 and the title of the book contains letter 'e':
+           ```sql
+           select * from carti where An_publicare like '2%' and Titlu like '%e%';
+           ```
          * Return all data from Carti where Id_gen is not 1 or 7:
-          ```sql
-         select * from CArti where not ID_gen = '1' and not ID_gen = '7';
-          ```
+           ```sql
+           select * from CArti where not ID_gen = '1' and not ID_gen = '7';
+           ```
          * Return the lowest year of publication from carti table:
-          ```sql
-         select min(An_publicare) from Carti;
-          ```
+           ```sql
+           select min(An_publicare) from Carti;
+           ```
          * Return the number of the books from carti table:
-          ```sql
-         select count(*) from Carti;
-          ```
+           ```sql
+           select count(*) from Carti;
+           ```
          * Returning the lowest year of publication and the ID_editura from Carti table:
-          ```sql
-         select min(An_puclicare), ID_editura
-         from Carti 
-         group by ID_editura;
-         ```
+           ```sql
+           select min(An_puclicare), ID_editura from Carti group by ID_editura;
+           ```
          * Return of the data from the Carti table in ascending order of the year of publication:
          ```sql
          select * from Carti order by An_publicare;
          ```
         * Return of 5 datas from the Carti table in ascending order of the year of publication:
-         ```sql
-       select * from Carti order by An_publicare limit 5;
-         ```
+          ```sql
+          select * from Carti order by An_publicare limit 5;
+          ```
         
            
   4. Conclusions
