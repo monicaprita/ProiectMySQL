@@ -10,7 +10,7 @@ Database description: I created a database named Books. In this database, I crea
   1. Database Schema
 
      You can find below the database schema that was generated through Reverse Engineer and which contains all the tables and the relationships between them.
-     [!(/assets/images/Diagrama.png)](https://github.com/monicaprita/ProiectMySQL/issues/1#issue-2307466460)
+    ![Diagrama](https://github.com/monicaprita/ProiectMySQL/assets/154963887/1434da52-bff6-4dfd-b287-175c9846f274)
 
       The tables are connected in the following way:
 
