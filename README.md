@@ -204,8 +204,19 @@ values
           ```sql
           select * from Carti order by An_publicare limit 5;
           ```
-        
-           
+        * Return of a list of books from the Carti table but with only names from nume_editura that contains "i":
+          ```sql
+          select ID_editura, Titlu, An_publicare from Carti where ID_editura in (select ID_editura from Edituri where Nume_editura like '%i%');
+          ```
+        * Return of a list of books from the Carti table but with only names from nume_editura that contains "i" using inner join:
+          ```sql
+          select ID_editura, Titlu, An_pubicare from Carti c inner join edituri e on c.ID_editura = e.ID_editura where e.Nume_editura like '%i%';
+          ```
+        * Return of all columns of Edituri table, where publishers has books with An_publicare at least 2021:
+          ```sql
+          select *from Edituri e where ID_edituri in (select ID_editura drom Edituri e inner join Carti c on E.ID_editura = C.ID_editura where extract (year from c.An_publicare)>2021;
+          ```
+       
   4. Conclusions
      
      The creation of the "Books" database signifies an important step towards building a robust and scalable system for managing book-related information. It provides a structured framework that will support the development of applications, reporting tools, or any other systems that rely on accurate and organized book data.
